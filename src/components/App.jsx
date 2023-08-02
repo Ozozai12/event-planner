@@ -1,16 +1,17 @@
+import { Route, Routes } from 'react-router-dom';
+
+import { Layout } from './Layout';
+import { General } from './General';
+import { Create } from './Create';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<General />} />
+        <Route path="/create" element={<Create />} />
+      </Route>
+      <Route path="*" element={<Layout />} />
+    </Routes>
   );
 };
