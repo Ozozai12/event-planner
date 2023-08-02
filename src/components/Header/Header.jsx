@@ -1,3 +1,22 @@
+import { FaChevronDown } from 'react-icons/fa';
+import { BiSearch } from 'react-icons/bi';
+
+import css from './Header.module.css';
+
 export const Header = () => {
-  return <p>Header</p>;
+  return (
+    <div className={css.container}>
+      <div className={css.upperHeader}>
+        <span className={css.title}>Event planner</span>
+        <div className={css.langSwitcher}>
+          <span className={css.langTitle}>UK</span>
+          <FaChevronDown />
+        </div>
+      </div>
+      <div className={css.searchBar}>
+        <BiSearch style={{ marginLeft: 12 }} />
+        <span className={css.searchTitle}>Search by keywords</span>
+      </div>
+    </div>
+  );
 };
