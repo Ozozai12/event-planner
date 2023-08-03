@@ -6,17 +6,24 @@
   border-bottom: 1px solid #7b61ff;
 }
 
-.upperHeader {
+.header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.title {
+.titleMobile {
+  display: block;
   color: #7b61ff;
   font-family: 'Alata';
   font-size: 24px;
   line-height: 1.3;
+  margin-right: auto;
+}
+
+.title {
+  display: none;
 }
 
 .langSwitcher {
@@ -34,7 +41,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-top: 24px;
-  width: 272px;
+  width: 100%;
   height: 48px;
   border-radius: 10px;
   box-shadow: 2px 4px 9px 0px #a68dae47;
@@ -46,4 +53,34 @@
   font-size: 14px;
   font-weight: 300;
   line-height: 1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.9px) {
+  .container {
+    padding: 26px 40px 18px 40px;
+  }
+
+  .titleMobile {
+    display: none;
+  }
+
+  .title {
+    display: block;
+    color: #7b61ff;
+    font-family: 'Alata';
+    font-size: 24px;
+    line-height: 1.3;
+    margin-right: auto;
+  }
+
+  .header {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+
+  .searchBar {
+    width: 368px;
+    margin: 0;
+    margin-right: 24px;
+  }
 }
