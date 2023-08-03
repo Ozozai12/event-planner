@@ -1,0 +1,130 @@
+.container {
+  padding: 41px 24px 24px 24px;
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989800/event-planner/Geo_Wave_22_rndl2n.jpg');
+  background-position: 50% 50%;
+  background-size: 1871px 1349px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #7b61ff;
+  fill: #7b61ff;
+}
+
+.pageTitle {
+  color: #3f3f3f;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.form {
+  width: calc(272px - 32px);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px 16px;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}
+
+.errorField {
+  text-align: right;
+}
+
+.inputTitle {
+  display: block;
+  color: #7b61ff;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: calc(100% - 24px);
+  height: calc(56px - 32px);
+  border-radius: 8px;
+  padding: 16px 12px;
+  color: #3f3f3f;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  border: 1px solid #aca7c3;
+  outline: none;
+}
+
+.inputError {
+  margin-bottom: 0;
+  border: 1px solid #ff2b77;
+}
+
+.errorMessage {
+  color: #ff2b77;
+  font-size: 12px;
+  line-height: 1.33;
+  margin-top: 4px;
+  margin-right: 19px;
+}
+
+.descrInput {
+  width: calc(100% - 24px);
+  height: calc(156px - 32px);
+  border-radius: 8px;
+  padding: 16px 12px;
+  color: #49454f;
+  border: 1px solid #aca7c3;
+  outline: none;
+  resize: none;
+}
+
+.select {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  color: #3f3f3f;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  border: 1px solid #aca7c3;
+  outline: none;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.datePicker {
+  width: calc(240px - 12px);
+  height: 56px;
+  border-radius: 8px;
+  color: #3f3f3f;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  border: 1px solid #aca7c3;
+  outline: none;
+  padding: 0;
+  padding-left: 12px;
+}
+
+.saveButton {
+  display: flex;
+  width: 240px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  margin-top: 20px;
+  background: #7b61ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}

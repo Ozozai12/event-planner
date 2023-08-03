@@ -1,0 +1,123 @@
+.container {
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989800/event-planner/Geo_Wave_22_rndl2n.jpg');
+  background-position: 50% 50%;
+  background-size: 1871px 1349px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.serviceButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}
+
+.serviceButton:not(:nth-child(1)) {
+  margin-left: 24px;
+}
+
+.serviceButton:nth-last-child(1) {
+  background-color: #7b61ff;
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventItem {
+  width: 271px;
+  height: 480px;
+  border-radius: 12px;
+  background-color: #fff;
+  margin-bottom: 24px;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+  overflow: hidden;
+}
+
+.imageThumb {
+  position: relative;
+  height: 336px;
+  width: 271px;
+}
+
+.badges {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  display: flex;
+}
+
+.typeBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  width: 86px;
+  height: 32px;
+  color: #7b61ff;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.priorityBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 86px;
+  height: 32px;
+  color: #e2a300;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.imageThumb img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.dateThumb {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 32px);
+  padding: 8px 16px;
+  color: #7b61ff;
+  line-height: 1.7;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.descriptionTitle {
+  color: #1c1b1f;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.descriptionText {
+  display: block;
+  color: #49454f;
+  width: 239px;
+  margin-top: 16px;
+  margin-left: 16px;
+  line-height: 1.4;
+}

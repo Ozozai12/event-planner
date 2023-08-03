@@ -14,7 +14,9 @@ export const Header = () => {
         </div>
       </div>
       <div className={css.searchBar}>
-        <BiSearch style={{ marginLeft: 12 }} />
+        <BiSearch
+          style={{ marginLeft: 12, width: 24, height: 24, fill: '#7B61FF' }}
+        />
         <span className={css.searchTitle}>Search by keywords</span>
       </div>
     </div>
