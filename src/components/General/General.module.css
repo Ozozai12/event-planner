@@ -1,6 +1,5 @@
 .container {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 40px 24px 40px 24px;
   height: 100%;
   background-image: url('https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989800/event-planner/Geo_Wave_22_rndl2n.jpg');
   background-position: 50% 50%;
@@ -10,8 +9,7 @@
 .buttons {
   display: flex;
   justify-content: flex-end;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .serviceButton {
@@ -22,6 +20,11 @@
   height: 56px;
   border-radius: 8px;
   background-color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #3f3f3f;
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 }
 
@@ -33,25 +36,52 @@
   background-color: #7b61ff;
 }
 
+.buttonName {
+  display: none;
+  margin-right: 16px;
+}
+
+.buttonName:nth-last-child(1) {
+  margin-left: 16px;
+  margin-right: 0;
+  color: #fff;
+}
+
 .eventList {
+  width: 271px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .eventItem {
+  display: block;
   width: 271px;
   height: 480px;
   border-radius: 12px;
   background-color: #fff;
-  margin-bottom: 24px;
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
   overflow: hidden;
 }
 
 .imageThumb {
+  display: block;
   position: relative;
-  height: 336px;
   width: 271px;
+  height: 336px;
+}
+
+.imageThumb > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.imageThumb img {
+  object-fit: cover;
 }
 
 .badges {
@@ -61,34 +91,15 @@
   display: flex;
 }
 
-.typeBadge {
+.badge {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 12px;
-  width: 86px;
-  height: 32px;
-  color: #7b61ff;
+  padding: 6px 12px;
   font-weight: 500;
   background-color: #fff;
   border-radius: 8px;
-}
-
-.priorityBadge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 86px;
-  height: 32px;
-  color: #e2a300;
-  font-weight: 500;
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.imageThumb img {
-  object-fit: cover;
-  height: 100%;
 }
 
 .dateThumb {
@@ -120,4 +131,40 @@
   margin-top: 16px;
   margin-left: 16px;
   line-height: 1.4;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.9px) {
+  .container {
+    padding: 40px;
+  }
+
+  .serviceButton:nth-child(1) {
+    width: 143px;
+  }
+
+  .serviceButton:nth-child(2) {
+    width: 129px;
+  }
+
+  .serviceButton:nth-child(3) {
+    width: 193px;
+  }
+
+  .buttonName {
+    display: block;
+    margin-right: 16px;
+  }
+
+  .eventList {
+    width: 688px;
+  }
+
+  .eventItem {
+    width: 332px;
+  }
+
+  .imageThumb {
+    width: 332px;
+    height: 296px;
+  }
 }
