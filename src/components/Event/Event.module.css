@@ -17,7 +17,7 @@
 .eventItem {
   position: relative;
   display: block;
-  width: 271px;
+  width: 100%;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
@@ -26,7 +26,7 @@
 
 .imageThumb {
   display: block;
-  width: 272px;
+  width: 100%;
   height: 168px;
   overflow: hidden;
   border-radius: 8px;
@@ -42,6 +42,11 @@
   object-fit: cover;
 }
 
+.descriptionThumb {
+  background-color: #fff;
+  padding: 24px 16px 40px 16px;
+}
+
 .badges {
   display: flex;
   flex-wrap: wrap;
@@ -54,18 +59,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 12px;
   padding: 6px 12px;
   font-weight: 500;
   color: #7b61ff;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 4px 5px 9px 0px rgba(166, 141, 174, 0.28);
-}
-
-.descriptionThumb {
-  background-color: #fff;
-  padding: 24px 16px 40px 16px;
 }
 
 .buttonSection {
@@ -75,7 +74,7 @@
 
 .button {
   width: calc(50% - 12px);
-  height: 32px;
+  padding: 8px 16px;
   border-radius: 4px;
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
@@ -94,4 +93,43 @@
   color: #fff;
   background-color: #7b61ff;
   border: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.9px) {
+  .container {
+    padding: 40px;
+  }
+
+  .pageTitle {
+    font-size: 32px;
+  }
+
+  .imageThumb {
+    height: 272px;
+  }
+
+  .descriptionThumb {
+    padding: 24px 24px 40px 24px;
+  }
+
+  .buttonSection {
+    justify-content: flex-end;
+  }
+
+  .button {
+    width: 0;
+  }
+
+  .button:not(:nth-child(1)) {
+    margin-left: 16px;
+  }
+
+  .editButton {
+    min-width: 55px;
+  }
+
+  .deleteButton {
+    min-width: 108px;
+    margin-right: 0;
+  }
 }
