@@ -37,22 +37,29 @@
 }
 
 .searchBar {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.searchInput {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 24px;
-  width: 100%;
+  width: calc(100% - 48px);
   height: 48px;
   border-radius: 10px;
+  border: none;
   box-shadow: 2px 4px 9px 0px #a68dae47;
-}
-
-.searchTitle {
-  margin-left: 12px;
-  color: #888;
+  outline: none;
+  padding-left: 48px;
+  color: #3f3f3f;
   font-size: 14px;
   font-weight: 300;
   line-height: 1;
+}
+
+.searchBar {
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {

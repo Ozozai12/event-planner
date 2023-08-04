@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { FaChevronDown } from 'react-icons/fa';
 import { BiSearch } from 'react-icons/bi';
 
@@ -7,18 +9,34 @@ export const Header = () => {
   return (
     <div className={css.container}>
       <div className={css.header}>
-        <span className={css.titleMobile}>Event planner</span>
+        <Link to="/" className={css.titleMobile}>
+          Event planner
+        </Link>
         <div className={css.langSwitcher}>
           <span className={css.langTitle}>UK</span>
           <FaChevronDown />
         </div>
         <div className={css.searchBar}>
           <BiSearch
-            style={{ marginLeft: 12, width: 24, height: 24, fill: '#7B61FF' }}
+            style={{
+              position: 'absolute',
+              left: 12,
+              top: 14,
+              width: 24,
+              height: 24,
+              fill: '#7B61FF',
+            }}
           />
-          <span className={css.searchTitle}>Search by keywords</span>
+          <input
+            type="text"
+            className={css.searchInput}
+            placeholder="Search by keywords"
+          />
         </div>
-        <span className={css.title}>Event planner</span>
+
+        <Link to="/" className={css.title}>
+          Event planner
+        </Link>
       </div>
     </div>
   );
