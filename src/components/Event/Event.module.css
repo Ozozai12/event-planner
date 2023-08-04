@@ -1,0 +1,97 @@
+.container {
+  padding: 41px 24px 24px 24px;
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989800/event-planner/Geo_Wave_22_rndl2n.jpg');
+  background-position: 50% 50%;
+  background-size: 1871px 1349px;
+}
+
+.pageTitle {
+  color: #3f3f3f;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.eventItem {
+  position: relative;
+  display: block;
+  width: 271px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+  overflow: hidden;
+}
+
+.imageThumb {
+  display: block;
+  width: 272px;
+  height: 168px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.imageThumb > img {
+  display: block;
+  height: 336px;
+  width: 100%;
+}
+
+.imageThumb img {
+  object-fit: cover;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  padding: 6px 12px;
+  font-weight: 500;
+  color: #7b61ff;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 4px 5px 9px 0px rgba(166, 141, 174, 0.28);
+}
+
+.descriptionThumb {
+  background-color: #fff;
+  padding: 24px 16px 40px 16px;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: calc(50% - 12px);
+  height: 32px;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.33;
+}
+
+.editButton {
+  color: #7b61ff;
+  background-color: #fff;
+  border: 1px solid #7b61ff;
+}
+
+.deleteButton {
+  color: #fff;
+  background-color: #7b61ff;
+  border: none;
+}
