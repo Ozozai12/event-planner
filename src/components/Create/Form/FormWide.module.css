@@ -1,0 +1,121 @@
+.form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px 40px;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}
+
+.formContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.column {
+  width: calc(33.33% - 12px);
+}
+
+.fieldContainer {
+  width: calc(100% - 28px);
+  margin-bottom: 20px;
+}
+
+.fieldContainer:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+.errorField {
+  text-align: right;
+}
+
+.inputTitle {
+  color: #7b61ff;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: calc(100% - 24px);
+  height: calc(56px - 32px);
+  border-radius: 8px;
+  padding: 16px 12px;
+  color: #3f3f3f;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #aca7c3;
+  outline: none;
+}
+
+.inputError {
+  margin-bottom: 0;
+  border: 1px solid #ff2b77;
+}
+
+.errorMessage {
+  color: #ff2b77;
+  font-size: 12px;
+  line-height: 1.33;
+  margin-top: 4px;
+  margin-right: 19px;
+}
+
+.descrInput {
+  width: calc(100% - 24px);
+  height: calc(150px - 32px);
+  border-radius: 8px;
+  padding: 16px 12px;
+  color: #49454f;
+  border: 1px solid #aca7c3;
+  outline: none;
+  resize: none;
+}
+
+.select {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  color: #3f3f3f;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #aca7c3;
+  outline: none;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.datePicker {
+  width: calc(100% - 12px);
+  height: 56px;
+  border-radius: 8px;
+  color: #3f3f3f;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #aca7c3;
+  outline: none;
+  padding: 0;
+  padding-left: 12px;
+}
+
+.saveButton {
+  display: flex;
+  width: 193px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  margin-left: auto;
+  margin-top: 40px;
+  background: #7b61ff;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}

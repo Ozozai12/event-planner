@@ -1,11 +1,11 @@
-import { BackArrow } from 'components/BackArrow/BackArrow';
+import { BackButton } from 'components/BackButton/BackButton';
 
 import css from './Event.module.css';
 
 export const Event = () => {
   return (
     <div className={css.container}>
-      <BackArrow />
+      <BackButton />
       <h1 className={css.pageTitle}>Gallery opening</h1>
       <div className={css.eventItem}>
         <div className={css.imageThumb}>

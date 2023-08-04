@@ -1,8 +1,14 @@
 .backButton {
   display: flex;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   font-weight: 500;
   color: #7b61ff;
   fill: #7b61ff;
+}
+
+@media screen and (min-width: 1280px) {
+  .backButton {
+    margin-bottom: 17px;
+  }
 }

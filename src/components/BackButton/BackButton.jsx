@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 
 import { BsArrowLeft } from 'react-icons/bs';
 
-import css from './BackArrow.module.css';
+import css from './BackButton.module.css';
 
-export const BackArrow = () => {
+export const BackButton = () => {
   return (
     <Link to="/">
       <div className={css.backButton}>
