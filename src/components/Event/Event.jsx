@@ -34,17 +34,14 @@ export const Event = () => {
               <span>12.07 at 12:00</span>
             </li>
           </ul>
-          <div className={css.buttonSection}>
-            <button type="button" className={`${css.button} ${css.editButton}`}>
-              Edit
-            </button>
-            <button
-              type="button"
-              className={`${css.button} ${css.deleteButton}`}
-            >
-              Delete event
-            </button>
-          </div>
+        </div>
+        <div className={css.buttonSection}>
+          <button type="button" className={`${css.button} ${css.editButton}`}>
+            Edit
+          </button>
+          <button type="button" className={`${css.button} ${css.deleteButton}`}>
+            Delete event
+          </button>
         </div>
       </div>
     </div>

@@ -18,8 +18,8 @@
   position: relative;
   display: block;
   width: 100%;
-  border-radius: 8px;
   background-color: #fff;
+  border-radius: 8px;
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
   overflow: hidden;
 }
@@ -52,7 +52,6 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 24px;
-  margin-bottom: 40px;
 }
 
 .badge {
@@ -70,6 +69,9 @@
 .buttonSection {
   display: flex;
   justify-content: space-between;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 40px;
 }
 
 .button {
@@ -95,7 +97,7 @@
   border: none;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279.9px) {
+@media screen and (min-width: 768px) {
   .container {
     padding: 40px;
   }
@@ -114,6 +116,8 @@
 
   .buttonSection {
     justify-content: flex-end;
+    padding-right: 40px;
+    padding-bottom: 40px;
   }
 
   .button {
@@ -131,5 +135,28 @@
   .deleteButton {
     min-width: 108px;
     margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 18px 80px 80px 80px;
+  }
+
+  .pageTitle {
+    width: 628px;
+    margin-bottom: 14px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eventItem {
+    width: 628px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .descriptionThumb {
+    padding: 20px 16px 24px 16px;
   }
 }
