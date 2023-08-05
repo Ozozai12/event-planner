@@ -10,11 +10,8 @@
 }
 
 .fieldContainer {
+  position: relative;
   margin-bottom: 20px;
-}
-
-.errorField {
-  text-align: right;
 }
 
 .inputTitle {
@@ -44,6 +41,9 @@
 }
 
 .errorMessage {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
   color: #ff2b77;
   font-size: 12px;
   line-height: 1.33;

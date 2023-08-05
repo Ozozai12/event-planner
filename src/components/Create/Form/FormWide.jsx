@@ -8,12 +8,14 @@ import css from './FormWide.module.css';
 import '../react-datepicker.css';
 
 export const FormWide = () => {
-  const [startDate, setStartDate] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
+
+  const regex = /^[a-zA-Z ]+$/i;
 
   const validateTitle = value => {
     if (!value) {
       return 'Title required';
-    } else if (!/^[a-zA-Z ]+$/i.test(value)) {
+    } else if (!regex.test(value)) {
       return 'Invalid input';
     }
   };
@@ -33,7 +35,7 @@ export const FormWide = () => {
   const validateLocation = value => {
     if (!value) {
       return 'Location required';
-    } else if (!/^[a-zA-Z]+$/i.test(value)) {
+    } else if (!regex.test(value)) {
       return 'Invalid input';
     }
   };
@@ -112,10 +114,11 @@ export const FormWide = () => {
                   <Field name="date" type="date">
                     {() => (
                       <DatePicker
-                        className={css.datePicker}
+                        minDate={new Date()}
                         selected={startDate}
                         onChange={handleDateChange}
                         dateFormat="dd/MM/yyyy"
+                        className={css.datePicker}
                       />
                     )}
                   </Field>

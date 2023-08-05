@@ -10,26 +10,38 @@ import '../react-datepicker.css';
 export const FormNarrow = () => {
   const [startDate, setStartDate] = useState(new Date());
 
+  const regex = /^[a-zA-Z ]+$/i;
+
   const validateTitle = value => {
     if (!value) {
       return 'Title required';
-    } else if (!/^[a-zA-Z ]+$/i.test(value)) {
+    } else if (!regex.test(value)) {
       return 'Invalid input';
+    }
+  };
+
+  const validateDescription = value => {
+    if (!value) {
+      return 'Description required';
+    }
+  };
+
+  const validateTime = value => {
+    if (!value) {
+      return 'Time required';
     }
   };
 
   const validateLocation = value => {
     if (!value) {
       return 'Location required';
-    } else if (!/^[a-zA-Z]+$/i.test(value)) {
+    } else if (!regex.test(value)) {
       return 'Invalid input';
     }
   };
 
-  const validateTime = value => {
-    if (value === '--:--') {
-      return 'Time required';
-    }
+  const handleDateChange = date => {
+    setStartDate(date);
   };
 
   return (
@@ -44,11 +56,8 @@ export const FormNarrow = () => {
           category: '',
           priority: '',
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={values => {
+          console.log({ ...values, date: startDate });
         }}
       >
         {({ errors, touched }) => (
@@ -59,22 +68,21 @@ export const FormNarrow = () => {
                   <label htmlFor="title" className={css.inputTitle}>
                     Title
                   </label>
-                  <div className={css.errorField}>
-                    <Field
-                      type="text"
-                      name="title"
-                      id="title"
-                      validate={validateTitle}
-                      className={classnames(css.input, {
-                        [css.inputError]: errors.title && touched.title,
-                      })}
-                    />
-                    <ErrorMessage
-                      name="title"
-                      component="div"
-                      className={css.errorMessage}
-                    />
-                  </div>
+
+                  <Field
+                    type="text"
+                    name="title"
+                    id="title"
+                    validate={validateTitle}
+                    className={classnames(css.input, {
+                      [css.inputError]: errors.title && touched.title,
+                    })}
+                  />
+                  <ErrorMessage
+                    name="title"
+                    component="div"
+                    className={css.errorMessage}
+                  />
                 </li>
 
                 <li className={css.fieldContainer}>
@@ -85,12 +93,13 @@ export const FormNarrow = () => {
                     type="text"
                     name="description"
                     as="textarea"
+                    validate={validateDescription}
                     className={css.descrInput}
                   />
                   <ErrorMessage
                     name="description"
                     component="div"
-                    className="errorMessage"
+                    className={css.errorMessage}
                   />
                 </li>
 
@@ -99,12 +108,17 @@ export const FormNarrow = () => {
                     Select date
                   </label>
 
-                  <DatePicker
-                    minDate={new Date()}
-                    selected={startDate}
-                    onChange={date => setStartDate(date)}
-                    className={css.datePicker}
-                  />
+                  <Field name="date" type="date">
+                    {() => (
+                      <DatePicker
+                        minDate={new Date()}
+                        selected={startDate}
+                        onChange={handleDateChange}
+                        dateFormat="dd/MM/yyyy"
+                        className={css.datePicker}
+                      />
+                    )}
+                  </Field>
                 </li>
 
                 <li className={css.fieldContainer}>
@@ -130,21 +144,20 @@ export const FormNarrow = () => {
                   <label htmlFor="location" className={css.inputTitle}>
                     Location
                   </label>
-                  <div className={css.errorField}>
-                    <Field
-                      type="text"
-                      name="location"
-                      validate={validateLocation}
-                      className={classnames(css.input, {
-                        [css.inputError]: errors.location && touched.location,
-                      })}
-                    />
-                    <ErrorMessage
-                      name="location"
-                      component="div"
-                      className={css.errorMessage}
-                    />
-                  </div>
+
+                  <Field
+                    type="text"
+                    name="location"
+                    validate={validateLocation}
+                    className={classnames(css.input, {
+                      [css.inputError]: errors.location && touched.location,
+                    })}
+                  />
+                  <ErrorMessage
+                    name="location"
+                    component="div"
+                    className={css.errorMessage}
+                  />
                 </li>
 
                 <li className={css.fieldContainer}>
