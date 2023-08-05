@@ -25,6 +25,13 @@ export const FormNarrow = () => {
       return 'Invalid input';
     }
   };
+
+  const validateTime = value => {
+    if (value === '--:--') {
+      return 'Time required';
+    }
+  };
+
   return (
     <>
       <Formik
@@ -104,7 +111,17 @@ export const FormNarrow = () => {
                   <label htmlFor="time" className={css.inputTitle}>
                     Select time
                   </label>
-                  <Field type="time" name="time" className={css.input} />
+                  <Field
+                    type="time"
+                    name="time"
+                    className={css.input}
+                    validate={validateTime}
+                  />
+                  <ErrorMessage
+                    name="time"
+                    component="div"
+                    className={css.errorMessage}
+                  />
                 </li>
               </ul>
 

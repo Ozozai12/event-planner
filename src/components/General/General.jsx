@@ -7,7 +7,32 @@ import { AiOutlinePlus } from 'react-icons/ai';
 
 import css from './General.module.css';
 
+const defaultEvents = [
+  {
+    id: '1',
+    title: 'Zoom meeting',
+    description:
+      'A zoom call with a team. Need to talk about important things such as work.',
+    date: '2023-08-08',
+    time: '12-00',
+    location: 'Kyiv',
+    category: 'Business',
+    priority: 'High',
+  },
+  {
+    id: '2',
+    title: 'Washing dishes',
+    description: 'Yes I need to wash a dish.',
+    date: '2023-10-08',
+    time: '20-00',
+    location: 'Kyiv',
+    category: 'Art',
+    priority: 'Medium',
+  },
+];
+
 export const General = () => {
+  const [events, setEvents] = useState(defaultEvents);
   const [shown, setShown] = useState(false);
 
   return (
@@ -34,166 +59,52 @@ export const General = () => {
 
       <div className={css.eventContainer}>
         <ul className={css.eventList}>
-          <li
-            className={css.eventItem}
-            onClick={() => setShown(true)}
-            onBlur={() => setShown(false)}
-          >
-            <div
-              className={css.imageThumb}
-              style={{ height: shown ? 280 : 336 }}
-            >
-              <div className={css.badges}>
-                <div className={css.badge}>
-                  <span>Business</span>
+          {events.map(event => {
+            return (
+              <li
+                key={event.id}
+                className={css.eventItem}
+                onClick={() => setShown(true)}
+                onBlur={() => setShown(false)}
+              >
+                <div
+                  className={css.imageThumb}
+                  style={{ height: shown ? 280 : 336 }}
+                >
+                  <div className={css.badges}>
+                    <div className={css.badge}>
+                      <span>{event.category}</span>
+                    </div>
+                    <div className={css.badge}>
+                      <span>{event.priority}</span>
+                    </div>
+                  </div>
+                  <img
+                    src="https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989811/event-planner/Rectangle_347_hkhrsu.jpg"
+                    alt="business meeting"
+                  />
                 </div>
-                <div className={css.badge}>
-                  <span>Medium</span>
+                <div className={css.descriptionThumb}>
+                  <div className={css.dateThumb}>
+                    <span>
+                      {event.date} at {event.time}
+                    </span>
+                    <span>{event.location}</span>
+                  </div>
+                  <p className={css.descriptionTitle}>{event.title}</p>
+                  <span className={css.descriptionText}>
+                    {event.description}
+                  </span>
                 </div>
-              </div>
-              <img
-                src="https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989811/event-planner/Rectangle_347_hkhrsu.jpg"
-                alt="business meeting"
-              />
-            </div>
-            <div className={css.descriptionThumb}>
-              <div className={css.dateThumb}>
-                <span>12.07 at 12:00</span>
-                <span>Kyiv</span>
-              </div>
-              <p className={css.descriptionTitle}>Leadership Conference</p>
-              <span className={css.descriptionText}>
-                Unlock the secrets of effective leadership at our transformative
-                Success Leadership Conference.
-              </span>
-            </div>
 
-            {shown && (
-              <Link to="/:id" className={css.moreButton}>
-                Learn more
-              </Link>
-            )}
-          </li>
-          <li
-            className={css.eventItem}
-            onClick={() => setShown(true)}
-            onBlur={() => setShown(false)}
-          >
-            <div
-              className={css.imageThumb}
-              style={{ height: shown ? 280 : 336 }}
-            >
-              <div className={css.badges}>
-                <div className={css.badge}>
-                  <span>Business</span>
-                </div>
-                <div className={css.badge}>
-                  <span>Medium</span>
-                </div>
-              </div>
-              <img
-                src="https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989811/event-planner/Rectangle_347_hkhrsu.jpg"
-                alt="business meeting"
-              />
-            </div>
-            <div className={css.descriptionThumb}>
-              <div className={css.dateThumb}>
-                <span>12.07 at 12:00</span>
-                <span>Kyiv</span>
-              </div>
-              <p className={css.descriptionTitle}>Leadership Conference</p>
-              <span className={css.descriptionText}>
-                Unlock the secrets of effective leadership at our transformative
-                Success Leadership Conference.
-              </span>
-            </div>
-
-            {shown && (
-              <Link to="/:id" className={css.moreButton}>
-                Learn more
-              </Link>
-            )}
-          </li>
-          <li
-            className={css.eventItem}
-            onClick={() => setShown(true)}
-            onBlur={() => setShown(false)}
-          >
-            <div
-              className={css.imageThumb}
-              style={{ height: shown ? 280 : 336 }}
-            >
-              <div className={css.badges}>
-                <div className={css.badge}>
-                  <span>Business</span>
-                </div>
-                <div className={css.badge}>
-                  <span>Medium</span>
-                </div>
-              </div>
-              <img
-                src="https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989811/event-planner/Rectangle_347_hkhrsu.jpg"
-                alt="business meeting"
-              />
-            </div>
-            <div className={css.descriptionThumb}>
-              <div className={css.dateThumb}>
-                <span>12.07 at 12:00</span>
-                <span>Kyiv</span>
-              </div>
-              <p className={css.descriptionTitle}>Leadership Conference</p>
-              <span className={css.descriptionText}>
-                Unlock the secrets of effective leadership at our transformative
-                Success Leadership Conference.
-              </span>
-            </div>
-
-            {shown && (
-              <Link to="/:id" className={css.moreButton}>
-                Learn more
-              </Link>
-            )}
-          </li>
-          <li
-            className={css.eventItem}
-            onClick={() => setShown(true)}
-            onBlur={() => setShown(false)}
-          >
-            <div
-              className={css.imageThumb}
-              style={{ height: shown ? 280 : 336 }}
-            >
-              <div className={css.badges}>
-                <div className={css.badge}>
-                  <span>Business</span>
-                </div>
-                <div className={css.badge}>
-                  <span>Medium</span>
-                </div>
-              </div>
-              <img
-                src="https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989811/event-planner/Rectangle_347_hkhrsu.jpg"
-                alt="business meeting"
-              />
-            </div>
-            <div className={css.descriptionThumb}>
-              <div className={css.dateThumb}>
-                <span>12.07 at 12:00</span>
-                <span>Kyiv</span>
-              </div>
-              <p className={css.descriptionTitle}>Leadership Conference</p>
-              <span className={css.descriptionText}>
-                Unlock the secrets of effective leadership at our transformative
-                Success Leadership Conference.
-              </span>
-            </div>
-
-            {shown && (
-              <Link to="/:id" className={css.moreButton}>
-                Learn more
-              </Link>
-            )}
-          </li>
+                {shown && (
+                  <Link to="/:id" className={css.moreButton}>
+                    Learn more
+                  </Link>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

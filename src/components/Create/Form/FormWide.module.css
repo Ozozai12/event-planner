@@ -12,20 +12,17 @@
 }
 
 .column {
-  width: calc(33.33% - 12px);
+  width: calc(33.33% - 30px);
 }
 
 .fieldContainer {
-  width: calc(100% - 28px);
+  position: relative;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .fieldContainer:nth-last-child(1) {
   margin-bottom: 0;
-}
-
-.errorField {
-  text-align: right;
 }
 
 .inputTitle {
@@ -55,6 +52,9 @@
 }
 
 .errorMessage {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
   color: #ff2b77;
   font-size: 12px;
   line-height: 1.33;
@@ -64,7 +64,7 @@
 
 .descrInput {
   width: calc(100% - 24px);
-  height: calc(150px - 32px);
+  height: calc(150px - 29px);
   border-radius: 8px;
   padding: 16px 12px;
   color: #49454f;
@@ -118,4 +118,8 @@
   font-weight: 500;
   line-height: normal;
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}
+
+.saveButton:disabled {
+  background: #aca7c3;
 }

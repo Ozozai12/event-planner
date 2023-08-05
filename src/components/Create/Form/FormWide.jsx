@@ -8,13 +8,25 @@ import css from './FormWide.module.css';
 import '../react-datepicker.css';
 
 export const FormWide = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(null);
 
   const validateTitle = value => {
     if (!value) {
       return 'Title required';
     } else if (!/^[a-zA-Z ]+$/i.test(value)) {
       return 'Invalid input';
+    }
+  };
+
+  const validateDescription = value => {
+    if (!value) {
+      return 'Description required';
+    }
+  };
+
+  const validateTime = value => {
+    if (!value) {
+      return 'Time required';
     }
   };
 
@@ -25,6 +37,11 @@ export const FormWide = () => {
       return 'Invalid input';
     }
   };
+
+  const handleDateChange = date => {
+    setStartDate(date);
+  };
+
   return (
     <>
       <Formik
@@ -34,14 +51,11 @@ export const FormWide = () => {
           date: startDate,
           time: '',
           location: '',
-          category: '',
-          priority: '',
+          category: 'Art',
+          priority: 'Low',
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={values => {
+          console.log({ ...values, date: startDate });
         }}
       >
         {({ errors, touched }) => (
@@ -52,38 +66,39 @@ export const FormWide = () => {
                   <label htmlFor="title" className={css.inputTitle}>
                     Title
                   </label>
-                  <div className={css.errorField}>
-                    <Field
-                      type="text"
-                      name="title"
-                      id="title"
-                      validate={validateTitle}
-                      className={classnames(css.input, {
-                        [css.inputError]: errors.title && touched.title,
-                      })}
-                    />
-                    <ErrorMessage
-                      name="title"
-                      component="div"
-                      className={css.errorMessage}
-                    />
-                  </div>
+
+                  <Field
+                    type="text"
+                    name="title"
+                    id="title"
+                    validate={validateTitle}
+                    className={classnames(css.input, {
+                      [css.inputError]: errors.title && touched.title,
+                    })}
+                  />
+                  <ErrorMessage
+                    name="title"
+                    component="div"
+                    className={css.errorMessage}
+                  />
                 </li>
 
                 <li className={css.fieldContainer}>
                   <label htmlFor="description" className={css.inputTitle}>
                     Description
                   </label>
+
                   <Field
                     type="text"
                     name="description"
                     as="textarea"
+                    validate={validateDescription}
                     className={css.descrInput}
                   />
                   <ErrorMessage
                     name="description"
                     component="div"
-                    className="errorMessage"
+                    className={css.errorMessage}
                   />
                 </li>
               </ul>
@@ -94,11 +109,20 @@ export const FormWide = () => {
                     Select date
                   </label>
 
-                  <DatePicker
-                    minDate={new Date()}
-                    selected={startDate}
-                    onChange={date => setStartDate(date)}
-                    className={css.datePicker}
+                  <Field name="date" type="date">
+                    {() => (
+                      <DatePicker
+                        className={css.datePicker}
+                        selected={startDate}
+                        onChange={handleDateChange}
+                        dateFormat="dd/MM/yyyy"
+                      />
+                    )}
+                  </Field>
+                  <ErrorMessage
+                    name="date"
+                    component="div"
+                    className={css.errorMessage}
                   />
                 </li>
 
@@ -106,27 +130,37 @@ export const FormWide = () => {
                   <label htmlFor="time" className={css.inputTitle}>
                     Select time
                   </label>
-                  <Field type="time" name="time" className={css.input} />
+
+                  <Field
+                    type="time"
+                    name="time"
+                    className={css.input}
+                    validate={validateTime}
+                  />
+                  <ErrorMessage
+                    name="time"
+                    component="div"
+                    className={css.errorMessage}
+                  />
                 </li>
                 <li className={css.fieldContainer}>
                   <label htmlFor="location" className={css.inputTitle}>
                     Location
                   </label>
-                  <div className={css.errorField}>
-                    <Field
-                      type="text"
-                      name="location"
-                      validate={validateLocation}
-                      className={classnames(css.input, {
-                        [css.inputError]: errors.location && touched.location,
-                      })}
-                    />
-                    <ErrorMessage
-                      name="location"
-                      component="div"
-                      className={css.errorMessage}
-                    />
-                  </div>
+
+                  <Field
+                    type="text"
+                    name="location"
+                    validate={validateLocation}
+                    className={classnames(css.input, {
+                      [css.inputError]: errors.location && touched.location,
+                    })}
+                  />
+                  <ErrorMessage
+                    name="location"
+                    component="div"
+                    className={css.errorMessage}
+                  />
                 </li>
               </ul>
 
