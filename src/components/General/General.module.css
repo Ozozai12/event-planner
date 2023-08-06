@@ -73,97 +73,6 @@
   overflow: hidden;
 }
 
-.imageThumb {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 336px;
-  overflow: hidden;
-}
-
-.imageThumb > img {
-  display: block;
-  height: 336px;
-  width: 100%;
-}
-
-.imageThumb img {
-  object-fit: cover;
-}
-
-.badges {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  display: flex;
-}
-
-.badge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 12px;
-  padding: 6px 12px;
-  font-weight: 500;
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.dateThumb {
-  position: absolute;
-  top: -39px;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% - 32px);
-  padding: 8px 16px;
-  color: #7b61ff;
-  line-height: 1.7;
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.descriptionThumb {
-  position: relative;
-  background-color: #fff;
-  padding: 16px;
-}
-
-.descriptionTitle {
-  color: #1c1b1f;
-
-  margin-bottom: 16px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.descriptionText {
-  display: block;
-  color: #49454f;
-  width: 100%;
-
-  line-height: 1.4;
-}
-
-.moreButton {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 114px;
-  height: 40px;
-  border-radius: 8px;
-  background: #7b61ff;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
 @media screen and (min-width: 768px) {
   .container {
     padding: 40px;
@@ -207,10 +116,6 @@
   .eventItem {
     width: calc(50% - 12px);
     height: 480px;
-  }
-
-  .imageThumb {
-    height: 296px;
   }
 }
 

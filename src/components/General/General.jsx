@@ -7,6 +7,8 @@ import { BiFilterAlt } from 'react-icons/bi';
 import { LiaSlidersHSolid } from 'react-icons/lia';
 import { AiOutlinePlus } from 'react-icons/ai';
 
+import { EventCard } from 'components/EventCard/EventCard';
+
 import css from './General.module.css';
 
 // const defaultEvents = [
@@ -35,7 +37,6 @@ import css from './General.module.css';
 
 export const General = () => {
   const [events, setEvents] = useState([]);
-  const [shown, setShown] = useState(false);
 
   useEffect(() => {
     getEvents();
@@ -51,10 +52,6 @@ export const General = () => {
       array.unshift(event);
     });
     setEvents(array);
-  };
-
-  const dateFormatHandler = date => {
-    return date.slice(0, 5);
   };
 
   return (
@@ -83,47 +80,8 @@ export const General = () => {
         <ul className={css.eventList}>
           {events.map(event => {
             return (
-              <li
-                key={event.id}
-                className={css.eventItem}
-                onClick={() => setShown(true)}
-                onBlur={() => setShown(false)}
-              >
-                <div
-                  className={css.imageThumb}
-                  style={{ height: shown ? 280 : 336 }}
-                >
-                  <div className={css.badges}>
-                    <div className={css.badge}>
-                      <span>{event.category}</span>
-                    </div>
-                    <div className={css.badge}>
-                      <span>{event.priority}</span>
-                    </div>
-                  </div>
-                  <img
-                    src="https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989811/event-planner/Rectangle_347_hkhrsu.jpg"
-                    alt="business meeting"
-                  />
-                </div>
-                <div className={css.descriptionThumb}>
-                  <div className={css.dateThumb}>
-                    <span>
-                      {dateFormatHandler(event.date)} at {event.time}
-                    </span>
-                    <span>{event.location}</span>
-                  </div>
-                  <p className={css.descriptionTitle}>{event.title}</p>
-                  <span className={css.descriptionText}>
-                    {event.description}
-                  </span>
-                </div>
-
-                {shown && (
-                  <Link to="/:id" className={css.moreButton}>
-                    Learn more
-                  </Link>
-                )}
+              <li key={event.id} className={css.eventItem}>
+                <EventCard event={event} />
               </li>
             );
           })}

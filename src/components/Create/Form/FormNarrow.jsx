@@ -5,6 +5,8 @@ import DatePicker from 'react-datepicker';
 import classnames from 'classnames';
 import { format } from 'date-fns';
 
+import pictureHandler from 'helpers/pictureHandler';
+
 import css from './FormNarrow.module.css';
 import '../react-datepicker.css';
 
@@ -18,8 +20,9 @@ export const FormNarrow = ({
   const [startDate, setStartDate] = useState(new Date());
 
   const handleFormattedDate = date => {
-    return date ? format(date, 'dd/MM/yyyy') : '';
+    return date ? format(date, 'dd.MM.yyyy') : '';
   };
+
   return (
     <>
       <Formik
@@ -33,7 +36,11 @@ export const FormNarrow = ({
           priority: 'Low',
         }}
         onSubmit={values => {
-          addEvent({ ...values, date: handleFormattedDate(startDate) });
+          addEvent({
+            ...values,
+            date: handleFormattedDate(startDate),
+            picture: pictureHandler(values.category),
+          });
         }}
       >
         {({ errors, touched }) => (
@@ -145,13 +152,13 @@ export const FormNarrow = ({
                     name="category"
                     className={css.select}
                   >
-                    <option value="art">Art</option>
-                    <option value="music">Music</option>
-                    <option value="business">Business</option>
-                    <option value="conference">Conference</option>
-                    <option value="workshop">Workshop</option>
-                    <option value="party">Party</option>
-                    <option value="sport">Sport</option>
+                    <option value="Art">Art</option>
+                    <option value="Music">Music</option>
+                    <option value="Business">Business</option>
+                    <option value="Conference">Conference</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Party">Party</option>
+                    <option value="Sport">Sport</option>
                   </Field>
                 </li>
 
@@ -164,9 +171,9 @@ export const FormNarrow = ({
                     name="priority"
                     className={css.select}
                   >
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
                   </Field>
                 </li>
               </ul>
