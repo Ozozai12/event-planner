@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import DatePicker from 'react-datepicker';
@@ -7,43 +7,15 @@ import classnames from 'classnames';
 import css from './FormWide.module.css';
 import '../react-datepicker.css';
 
-export const FormWide = () => {
-  const [startDate, setStartDate] = useState(new Date());
-
-  const regex = /^[a-zA-Z ]+$/i;
-
-  const validateTitle = value => {
-    if (!value) {
-      return 'Title required';
-    } else if (!regex.test(value)) {
-      return 'Invalid input';
-    }
-  };
-
-  const validateDescription = value => {
-    if (!value) {
-      return 'Description required';
-    }
-  };
-
-  const validateTime = value => {
-    if (!value) {
-      return 'Time required';
-    }
-  };
-
-  const validateLocation = value => {
-    if (!value) {
-      return 'Location required';
-    } else if (!regex.test(value)) {
-      return 'Invalid input';
-    }
-  };
-
-  const handleDateChange = date => {
-    setStartDate(date);
-  };
-
+export const FormWide = ({
+  startDate,
+  validateDescription,
+  validateLocation,
+  validateTime,
+  validateTitle,
+  setStartDate,
+  addEvent,
+}) => {
   return (
     <>
       <Formik
@@ -57,7 +29,7 @@ export const FormWide = () => {
           priority: 'Low',
         }}
         onSubmit={values => {
-          console.log({ ...values, date: startDate });
+          addEvent({ ...values, startDate });
         }}
       >
         {({ errors, touched }) => (
@@ -116,7 +88,7 @@ export const FormWide = () => {
                       <DatePicker
                         minDate={new Date()}
                         selected={startDate}
-                        onChange={handleDateChange}
+                        onChange={date => setStartDate(date)}
                         dateFormat="dd/MM/yyyy"
                         className={css.datePicker}
                       />
