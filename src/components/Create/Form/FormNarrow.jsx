@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import DatePicker from 'react-datepicker';
 import classnames from 'classnames';
+import { format } from 'date-fns';
 
 import css from './FormNarrow.module.css';
 import '../react-datepicker.css';
 
 export const FormNarrow = ({
-  startDate,
   validateDescription,
   validateLocation,
   validateTime,
   validateTitle,
-  setStartDate,
   addEvent,
 }) => {
+  const [startDate, setStartDate] = useState(new Date());
+
+  const handleFormattedDate = date => {
+    return date ? format(date, 'dd/MM/yyyy') : '';
+  };
   return (
     <>
       <Formik
@@ -29,7 +33,7 @@ export const FormNarrow = ({
           priority: 'Low',
         }}
         onSubmit={values => {
-          addEvent({ ...values, startDate });
+          addEvent({ ...values, date: handleFormattedDate(startDate) });
         }}
       >
         {({ errors, touched }) => (

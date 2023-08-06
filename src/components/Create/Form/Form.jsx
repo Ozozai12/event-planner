@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../../firebase';
@@ -10,14 +10,13 @@ import { FormNarrow } from './FormNarrow';
 
 export const Form = () => {
   const { isDesktop } = useMatchMedia();
-  const [startDate, setStartDate] = useState(new Date());
 
   const navigate = useNavigate();
 
   const addEvent = async credentials => {
     try {
       await addDoc(collection(db, 'events'), {
-        credentials,
+        ...credentials,
         id: uuidv4(),
       });
       navigate('/');
@@ -60,22 +59,19 @@ export const Form = () => {
     <>
       {isDesktop ? (
         <FormWide
-          startDate={startDate}
           validateDescription={validateDescription}
           validateLocation={validateLocation}
           validateTime={validateTime}
           validateTitle={validateTitle}
-          setStartDate={setStartDate}
           addEvent={addEvent}
         />
       ) : (
         <FormNarrow
-          startDate={startDate}
           validateDescription={validateDescription}
           validateLocation={validateLocation}
           validateTime={validateTime}
           validateTitle={validateTitle}
-          setStartDate={setStartDate}
+          addEvent={addEvent}
         />
       )}
     </>
