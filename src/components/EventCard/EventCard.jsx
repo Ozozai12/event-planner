@@ -2,15 +2,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import priorityHandler from 'helpers/priorityHandler';
+import dateFormatHandler from 'helpers/dateFormatHandler';
 
 import css from './EventCard.module.css';
 
 export const EventCard = ({ event }) => {
   const [showMore, setShowMore] = useState(false);
-
-  const dateFormatHandler = () => {
-    return event.date.slice(0, 5);
-  };
 
   return (
     <div
@@ -39,7 +36,7 @@ export const EventCard = ({ event }) => {
       </div>
 
       {showMore && (
-        <Link to={`/:${event.id}`} className={css.moreButton}>
+        <Link to={`/${event.id}`} className={css.moreButton}>
           Learn more
         </Link>
       )}
