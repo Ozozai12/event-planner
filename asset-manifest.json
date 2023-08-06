@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/event-planner/static/css/main.e1757fa6.css",
-    "main.js": "/event-planner/static/js/main.fe14b74e.js",
+    "main.css": "/event-planner/static/css/main.4e31e4ab.css",
+    "main.js": "/event-planner/static/js/main.10873956.js",
     "index.html": "/event-planner/index.html",
-    "main.e1757fa6.css.map": "/event-planner/static/css/main.e1757fa6.css.map",
-    "main.fe14b74e.js.map": "/event-planner/static/js/main.fe14b74e.js.map"
+    "main.4e31e4ab.css.map": "/event-planner/static/css/main.4e31e4ab.css.map",
+    "main.10873956.js.map": "/event-planner/static/js/main.10873956.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1757fa6.css",
-    "static/js/main.fe14b74e.js"
+    "static/css/main.4e31e4ab.css",
+    "static/js/main.10873956.js"
   ]
 }
