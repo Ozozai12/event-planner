@@ -1,7 +1,7 @@
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import { BackButton } from 'components/BackButton/BackButton';
@@ -13,6 +13,7 @@ import css from './Event.module.css';
 export const Event = () => {
   const [event, setEvent] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getEventById(id);
@@ -23,6 +24,12 @@ export const Event = () => {
     const docSnap = await getDoc(docRef);
     const eventById = docSnap.data();
     setEvent(eventById);
+  };
+
+  const deleteEvent = async id => {
+    const docRef = doc(db, 'events', id);
+    await deleteDoc(docRef);
+    navigate('/');
   };
 
   return (
@@ -57,7 +64,11 @@ export const Event = () => {
           <button type="button" className={`${css.button} ${css.editButton}`}>
             Edit
           </button>
-          <button type="button" className={`${css.button} ${css.deleteButton}`}>
+          <button
+            type="button"
+            className={`${css.button} ${css.deleteButton}`}
+            onClick={() => deleteEvent(id)}
+          >
             Delete event
           </button>
         </div>
