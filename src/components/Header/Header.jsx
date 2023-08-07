@@ -13,7 +13,7 @@ export const Header = () => {
           Event planner
         </Link>
         <div className={css.langSwitcher}>
-          <span className={css.langTitle}>UK</span>
+          <span className={css.langTitle}>EN</span>
           <FaChevronDown />
         </div>
         <div className={css.searchBar}>
