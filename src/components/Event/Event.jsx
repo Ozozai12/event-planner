@@ -61,7 +61,11 @@ export const Event = () => {
           </ul>
         </div>
         <div className={css.buttonSection}>
-          <button type="button" className={`${css.button} ${css.editButton}`}>
+          <button
+            disabled
+            type="button"
+            className={`${css.button} ${css.editButton}`}
+          >
             Edit
           </button>
           <button

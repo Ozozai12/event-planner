@@ -5,10 +5,49 @@ import DatePicker from 'react-datepicker';
 import classnames from 'classnames';
 import { format } from 'date-fns';
 
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+
 import pictureHandler from 'helpers/pictureHandler';
 
 import css from './FormWide.module.css';
 import '../react-datepicker.css';
+
+const categories = [
+  {
+    category: 'Art',
+  },
+  {
+    category: 'Music',
+  },
+  {
+    category: 'Business',
+  },
+  {
+    category: 'Conference',
+  },
+  {
+    category: 'Workshop',
+  },
+  {
+    category: 'Party',
+  },
+  {
+    category: 'Sport',
+  },
+];
+
+const priorities = [
+  {
+    priority: 'Low',
+  },
+  {
+    priority: 'Medium',
+  },
+  {
+    priority: 'High',
+  },
+];
 
 export const FormWide = ({
   validateDescription,
@@ -159,18 +198,26 @@ export const FormWide = ({
                   <label htmlFor="category" className={css.inputTitle}>
                     Select category
                   </label>
-                  <Field
-                    component="select"
-                    name="category"
-                    className={css.select}
-                  >
-                    <option value="Art">Art</option>
-                    <option value="Music">Music</option>
-                    <option value="Business">Business</option>
-                    <option value="Conference">Conference</option>
-                    <option value="Workshop">Workshop</option>
-                    <option value="Party">Party</option>
-                    <option value="Sport">Sport</option>
+                  <Field name="category">
+                    {({ field }) => (
+                      <Select
+                        {...field}
+                        fullWidth
+                        sx={{
+                          height: '57.6px',
+                          borderRadius: '8px',
+                        }}
+                      >
+                        {categories.map(option => (
+                          <MenuItem
+                            key={option.category}
+                            value={option.category}
+                          >
+                            {option.category}
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    )}
                   </Field>
                 </li>
 
@@ -178,14 +225,26 @@ export const FormWide = ({
                   <label htmlFor="priority" className={css.inputTitle}>
                     Select priority
                   </label>
-                  <Field
-                    component="select"
-                    name="priority"
-                    className={css.select}
-                  >
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
+                  <Field name="priority">
+                    {({ field }) => (
+                      <Select
+                        {...field}
+                        fullWidth
+                        sx={{
+                          height: '57.6px',
+                          borderRadius: '8px',
+                        }}
+                      >
+                        {priorities.map(option => (
+                          <MenuItem
+                            key={option.priority}
+                            value={option.priority}
+                          >
+                            {option.priority}
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    )}
                   </Field>
                 </li>
               </ul>
