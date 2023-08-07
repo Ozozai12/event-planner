@@ -91,6 +91,11 @@
   border: 1px solid #7b61ff;
 }
 
+.editButton:disabled {
+  color: #aca7c3;
+  border: 1px solid #aca7c3;
+}
+
 .deleteButton {
   color: #fff;
   background-color: #7b61ff;
