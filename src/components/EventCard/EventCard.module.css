@@ -86,13 +86,17 @@
   width: 114px;
   height: 40px;
   border-radius: 8px;
-  background: #7b61ff;
+  background-color: #7b61ff;
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.4;
+}
+
+.moreButton:hover {
+  background-color: #6243ff;
 }
 
 @media screen and (min-width: 768px) {

@@ -7,6 +7,11 @@
   fill: #7b61ff;
 }
 
+.backButton:hover {
+  color: #6243ff;
+  fill: #6243ff;
+}
+
 @media screen and (min-width: 1280px) {
   .backButton {
     margin-bottom: 17px;

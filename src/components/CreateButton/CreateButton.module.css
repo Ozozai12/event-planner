@@ -1,4 +1,4 @@
-.serviceButton {
+.buttonContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.buttonContainer:hover {
+  background-color: #6243ff;
+}
+
 .buttonName {
   display: none;
   margin-right: 0;
@@ -23,7 +27,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .serviceButton {
+  .buttonContainer {
     width: 193px;
   }
 
