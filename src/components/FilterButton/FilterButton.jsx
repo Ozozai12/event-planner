@@ -4,6 +4,7 @@ import css from './FilterButton.module.css';
 import { useState } from 'react';
 
 import useHover from 'hooks/useHover';
+import { useMatchMedia } from 'hooks/use-match-media';
 
 const categories = [
   {
@@ -36,6 +37,7 @@ export const FilterButton = props => {
   const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState('All');
   const [hoverRef, isHovered] = useHover();
+  const { isMobile } = useMatchMedia();
 
   const filterItemsByCategory = category => {
     props.onSelect(category);
@@ -46,13 +48,29 @@ export const FilterButton = props => {
         className={css.serviceButton}
         onClick={() => setIsOpen(!isOpen)}
         onBlur={() => setIsOpen(false)}
-        style={{
-          borderBottomRightRadius: isOpen ? 0 : 8,
-          borderBottomLeftRadius: isOpen ? 0 : 8,
-        }}
+        style={
+          isMobile
+            ? {
+                borderBottomRightRadius: isOpen ? 0 : 8,
+                borderBottomLeftRadius: isOpen ? 0 : 8,
+                width: isOpen ? 148 : 56,
+                transform: isOpen ? 'translateX(60%)' : 'none',
+              }
+            : {
+                borderBottomRightRadius: isOpen ? 0 : 8,
+                borderBottomLeftRadius: isOpen ? 0 : 8,
+              }
+        }
         ref={hoverRef}
       >
-        <span className={css.buttonName}>
+        <span
+          className={css.buttonName}
+          style={
+            isMobile
+              ? { display: isOpen ? 'block' : 'none' }
+              : { display: 'block' }
+          }
+        >
           {category === 'All' ? 'Category' : category}
         </span>
         <BiFilterAlt
@@ -67,6 +85,7 @@ export const FilterButton = props => {
             {categories.map(item => {
               return (
                 <li
+                  className={css.menuItem}
                   key={item.category}
                   onClick={() => {
                     setCategory(item.category);

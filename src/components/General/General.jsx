@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { query, where, collection, getDocs } from 'firebase/firestore';
@@ -53,13 +52,13 @@ export const General = () => {
     <div className={css.container}>
       <div className={css.upperSection}>
         <ul className={css.buttons}>
-          <li>
+          <li className={css.serviceButton}>
             <FilterButton onSelect={getEventByCategory} />
           </li>
-          <li>
+          <li className={css.serviceButton}>
             <SortButton />
           </li>
-          <li>
+          <li className={css.serviceButton}>
             <CreateButton />
           </li>
         </ul>
