@@ -72,12 +72,16 @@ export const FormNarrow = ({
                   <label htmlFor="description" className={css.inputTitle}>
                     Description
                   </label>
+
                   <Field
                     type="text"
                     name="description"
                     as="textarea"
                     validate={validateDescription}
-                    className={css.descrInput}
+                    className={classnames(css.descrInput, {
+                      [css.inputError]:
+                        errors.description && touched.description,
+                    })}
                   />
                   <ErrorMessage
                     name="description"
@@ -111,8 +115,10 @@ export const FormNarrow = ({
                   <Field
                     type="time"
                     name="time"
-                    className={css.input}
                     validate={validateTime}
+                    className={classnames(css.input, {
+                      [css.inputError]: errors.time && touched.time,
+                    })}
                   />
                   <ErrorMessage
                     name="time"

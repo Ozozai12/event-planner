@@ -77,7 +77,10 @@ export const FormWide = ({
                     name="description"
                     as="textarea"
                     validate={validateDescription}
-                    className={css.descrInput}
+                    className={classnames(css.descrInput, {
+                      [css.inputError]:
+                        errors.description && touched.description,
+                    })}
                   />
                   <ErrorMessage
                     name="description"
@@ -119,8 +122,10 @@ export const FormWide = ({
                   <Field
                     type="time"
                     name="time"
-                    className={css.input}
                     validate={validateTime}
+                    className={classnames(css.input, {
+                      [css.inputError]: errors.time && touched.time,
+                    })}
                   />
                   <ErrorMessage
                     name="time"
