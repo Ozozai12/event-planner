@@ -1,0 +1,36 @@
+.serviceButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #3f3f3f;
+  border: none;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+  cursor: pointer;
+}
+
+.buttonName {
+  display: none;
+  margin-right: 16px;
+  margin-left: 16px;
+  margin-right: 0;
+  color: #3f3f3f;
+}
+
+@media screen and (min-width: 768px) {
+  .serviceButton {
+    width: 129px;
+  }
+
+  .buttonName {
+    display: block;
+    margin-right: 16px;
+  }
+}
