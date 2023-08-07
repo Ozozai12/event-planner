@@ -51,6 +51,12 @@
   position: relative;
   background-color: #fff;
   padding: 16px;
+  height: 208px;
+  transition: transform;
+}
+
+.eventItem:hover .descriptionThumb {
+  transform: translateY(-64px);
 }
 
 .descriptionTitle {
