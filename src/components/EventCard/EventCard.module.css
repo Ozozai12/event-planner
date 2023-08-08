@@ -52,7 +52,7 @@
   background-color: #fff;
   padding: 16px;
   height: 208px;
-  transition: transform;
+  transition: transform 150ms linear;
 }
 
 .eventItem:hover .descriptionThumb {
@@ -93,6 +93,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.4;
+  transition: background-color 500ms linear;
 }
 
 .moreButton:hover {

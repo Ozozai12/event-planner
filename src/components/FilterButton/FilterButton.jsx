@@ -45,7 +45,7 @@ export const FilterButton = props => {
   return (
     <>
       <div
-        className={css.serviceButton}
+        className={css.buttonContainer}
         onClick={() => setIsOpen(!isOpen)}
         onBlur={() => setIsOpen(false)}
         style={

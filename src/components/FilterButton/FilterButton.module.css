@@ -1,4 +1,4 @@
-.serviceButton {
+.buttonContainer {
   position: relative;
   display: flex;
   justify-content: center;
@@ -17,9 +17,10 @@
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
   cursor: pointer;
   z-index: 10;
+  transition: background-color 500ms linear;
 }
 
-.serviceButton:hover {
+.buttonContainer:hover {
   color: #7b61ff;
 }
 
@@ -52,6 +53,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
+  transition: color 500ms linear, border-bottom 500ms linear;
 }
 
 .dropdownMenu li:nth-last-child(1) {
@@ -72,7 +74,7 @@
     margin-bottom: 24px;
   }
 
-  .serviceButton {
+  .buttonContainer {
     width: 148px;
   }
   .buttonName {

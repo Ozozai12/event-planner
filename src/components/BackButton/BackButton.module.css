@@ -5,6 +5,7 @@
   font-weight: 500;
   color: #7b61ff;
   fill: #7b61ff;
+  transition: background-color 500ms linear;
 }
 
 .backButton:hover {
