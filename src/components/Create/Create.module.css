@@ -4,7 +4,8 @@
   background-image: url('https://res.cloudinary.com/dmadhdzzm/image/upload/v1690989800/event-planner/Geo_Wave_22_rndl2n.jpg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: 1871px 1349px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .pageTitle {
