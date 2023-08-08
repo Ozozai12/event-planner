@@ -5,12 +5,9 @@
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 }
 
-.column {
-  width: 100%;
-}
-
 .fieldContainer {
   position: relative;
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -24,7 +21,7 @@
 
 .input {
   width: calc(100% - 24px);
-  height: calc(56px - 32px);
+  height: calc(57px - 33px);
   border-radius: 8px;
   padding: 16px 12px;
   color: #3f3f3f;
@@ -52,27 +49,13 @@
 
 .descrInput {
   width: calc(100% - 24px);
-  height: calc(150px - 32px);
+  height: calc(150px - 24px);
   border-radius: 8px;
   padding: 16px 12px;
   color: #49454f;
   border: 1px solid #aca7c3;
   outline: none;
   resize: none;
-}
-
-.select {
-  width: 100%;
-  height: 56px;
-  border-radius: 8px;
-  color: #3f3f3f;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  border: 1px solid #aca7c3;
-  outline: none;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .datePicker {
@@ -97,6 +80,7 @@
   align-items: center;
   border-radius: 8px;
   border: none;
+  margin-left: auto;
   margin-top: 40px;
   background-color: #7b61ff;
   color: #fff;
@@ -108,8 +92,12 @@
   cursor: pointer;
 }
 
-.saveButton:active {
+.saveButton:hover {
   background-color: #6243ff;
+}
+
+.saveButton:disabled {
+  background-color: #aca7c3;
 }
 
 @media screen and (min-width: 768px) {
@@ -117,67 +105,83 @@
     padding: 40px 24px;
   }
 
-  .fieldContainer:nth-child(4) {
-    margin-bottom: 0;
+  .fieldContainer {
+    margin: 0;
   }
 
   .formContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 24px;
+    row-gap: 20px;
   }
 
-  .column {
-    width: calc(50% - 12px);
+  .fieldContainer:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 2;
   }
 
-  .input:nth-child(4) {
-    margin-bottom: 0;
+  .fieldContainer:nth-child(2) {
+    grid-area: 2 / 1 / 4 / 2;
+  }
+
+  .fieldContainer:nth-child(3) {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  .fieldContainer:nth-child(4) {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+
+  .fieldContainer:nth-child(5) {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .fieldContainer:nth-child(6) {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .fieldContainer:nth-child(7) {
+    grid-area: 3 / 2 / 4 / 3;
   }
 
   .saveButton {
     width: 193px;
-    margin-left: auto;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .form {
     padding: 40px 40px;
-    height: 490px;
   }
 
   .formContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 42px;
   }
 
-  .errorField {
-    width: 100%;
+  .fieldContainer:nth-child(2) {
+    grid-area: 2 / 1 / 4 / 2;
   }
 
-  .fieldContainer {
-    width: calc(100% - 28px);
+  .fieldContainer:nth-child(3) {
+    grid-area: 1 / 2 / 2 / 3;
   }
 
-  .inputTitle {
-    width: calc(100% - 24px);
+  .fieldContainer:nth-child(4) {
+    grid-area: 2 / 2 / 3 / 3;
   }
 
-  .input {
-    width: calc(100% - 24px);
+  .fieldContainer:nth-child(5) {
+    grid-area: 3 / 2 / 4 / 3;
   }
 
-  .descrInput {
-    width: calc(100% - 24px);
+  .fieldContainer:nth-child(6) {
+    grid-area: 1 / 3 / 2 / 4;
   }
 
-  .select {
-    width: calc(100% - 24px);
-  }
-
-  .datePicker {
-    width: calc(100% - 24px);
+  .fieldContainer:nth-child(7) {
+    grid-area: 2 / 3 / 3 / 4;
   }
 }
